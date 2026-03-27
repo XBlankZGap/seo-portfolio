@@ -1,0 +1,4 @@
+baseURL = 'https://XBlankZGap.github.io/seo-portfolio/'
+languageCode = 'en-us'
+title = "Sophy's SEO Portfolio"
+theme = 'PaperMod'
