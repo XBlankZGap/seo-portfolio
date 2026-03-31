@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Sophy&#39;s SEO Portfolio</title>
+    <link>http://localhost:44365/seo-portfolio/posts/</link>
+    <description>Recent content in Posts on Sophy&#39;s SEO Portfolio</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Mar 2026 20:57:52 +0100</lastBuildDate>
+    <atom:link href="http://localhost:44365/seo-portfolio/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seo Audit Sample</title>
+      <link>http://localhost:44365/seo-portfolio/posts/seo-audit-sample/</link>
+      <pubDate>Fri, 27 Mar 2026 20:57:52 +0100</pubDate>
+      <guid>http://localhost:44365/seo-portfolio/posts/seo-audit-sample/</guid>
+      <description>&lt;p&gt;🔷️Categorizing Onsite SEO Auditing:&lt;/p&gt;
+&lt;p&gt;🟡 Technical Health:
+Indexation
+Sitemap
+Robots.txt
+Url structure*
+Canonicals
+Redirects
+Broken links
+Seo metadata*🤎
+Tech stack*
+Structured data
+Faq schema*&lt;/p&gt;
+&lt;p&gt;🟡 Trust and Authority:
+Trust pages
+Ssl cert
+Backlinks&lt;/p&gt;
+&lt;p&gt;🟡 Performance and Speed:
+Core web vitals
+Pagespeed*
+Security headers* (added to Trust and Authority **)&lt;/p&gt;
+&lt;p&gt;🟡 Design &amp;amp; UX:
+Image Optimization
+Mobile viewport
+Modern design
+Added: touch targets**&lt;/p&gt;
+&lt;p&gt;🟡 Visibility:
+Organic traffic
+Paid traffic*
+Keyword ranking
+AI visibility
+**added: seo metadata&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
