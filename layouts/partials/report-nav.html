@@ -1,0 +1,66 @@
+<footer class="flex justify-between items-center border-t border-[#3c494e]/10 pt-12">
+    {{ if .IsNode }}
+        <!-- Parent/Section Index (Section 1) -->
+        <a href="/" class="flex items-center gap-4 group">
+            <div class="w-10 h-10 rounded-full bg-[#282a2c] flex items-center justify-center group-hover:bg-[#333537] transition-colors">
+                <svg class="text-[#bbc9cf] w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </div>
+            <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Back to Portfolio</span>
+        </a>
+        
+        <div class="flex items-center gap-6">
+            {{ $pages := .RegularPages.ByWeight }}
+            {{ if gt (len $pages) 0 }}
+                {{ $firstPage := index $pages 0 }}
+                <span class="text-[10px] uppercase tracking-widest text-[#00d4ff] font-bold font-inter">Next up: Section 2: {{ $firstPage.Title }}</span>
+                <a href="{{ $firstPage.Permalink }}" class="w-12 h-12 rounded-full bg-[#00d4ff] flex items-center justify-center text-[#003642] shadow-[0_0_24px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            {{ end }}
+        </div>
+    {{ else }}
+        <!-- Regular Report Page (Section 2-6) -->
+        {{ $pages := .Parent.RegularPages.ByWeight }}
+        {{ $currentIndex := -1 }}
+        {{ range $index, $element := $pages }}
+            {{ if eq . $ }}
+                {{ $currentIndex = $index }}
+            {{ end }}
+        {{ end }}
+
+        {{ $prevPage := index $pages (sub $currentIndex 1) }}
+        {{ $nextPage := index $pages (add $currentIndex 1) }}
+
+        <!-- Previous Link -->
+        {{ if (and (gt $currentIndex 0) $prevPage) }}
+        <a href="{{ $prevPage.Permalink }}" class="flex items-center gap-4 group">
+            <div class="w-10 h-10 rounded-full bg-[#282a2c] flex items-center justify-center group-hover:bg-[#333537] transition-colors">
+                <svg class="text-[#bbc9cf] w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </div>
+            <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Prev: Section {{ .Weight | sub 1 }}: {{ $prevPage.Title }}</span>
+        </a>
+        {{ else }}
+        <a href="{{ .Parent.Permalink }}" class="flex items-center gap-4 group">
+            <div class="w-10 h-10 rounded-full bg-[#282a2c] flex items-center justify-center group-hover:bg-[#333537] transition-colors">
+                <svg class="text-[#bbc9cf] w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </div>
+            <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Prev: Section 1: Executive Summary</span>
+        </a>
+        {{ end }}
+
+        <!-- Next Link -->
+        <div class="flex items-center gap-6">
+            {{ if $nextPage }}
+            <span class="text-[10px] uppercase tracking-widest text-[#00d4ff] font-bold font-inter">Next up: Section {{ .Weight | add 1 }}: {{ if .NextInSection }}{{ .NextInSection.Title }}{{ else }}{{ $nextPage.Title }}{{ end }}</span>
+            <a href="{{ $nextPage.Permalink }}" class="w-12 h-12 rounded-full bg-[#00d4ff] flex items-center justify-center text-[#003642] shadow-[0_0_24px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            {{ else }}
+            <span class="text-[10px] uppercase tracking-widest text-[#00d4ff] font-bold font-inter">Conclusion: Contact Strategist</span>
+            <a href="/contact/" class="w-12 h-12 rounded-full bg-[#00d4ff] flex items-center justify-center text-[#003642] shadow-[0_0_24px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            {{ end }}
+        </div>
+    {{ end }}
+</footer>
