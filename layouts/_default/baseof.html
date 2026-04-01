@@ -1,35 +1,103 @@
-{{- if lt hugo.Version "0.146.0" }}
-{{- errorf "=> hugo v0.146.0 or greater is required for hugo-PaperMod to build " }}
-{{- end -}}
-
 <!DOCTYPE html>
-{{- $theme := site.Params.defaultTheme | default "auto" }}
-{{- if eq $theme "dark" }}
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="dark">
-{{- else if eq $theme "light" }}
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="light">
-{{- else }}
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="auto">
-{{- end }}
-
+<html lang="{{ .Site.LanguageCode }}">
 <head>
-    {{- partial "head.html" . }}
-</head>
-
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
-<body class="list" id="top">
-{{- else }}
-<body id="top">
-{{- end }}
-    {{ partialCached "header.html" . .Page -}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
     
-    {{- /* Persistent Search Bar Relocated centrally before the body */}}
-    {{ partial "search_bar.html" . }}
-
-    <main class="main">
-        {{- block "main" . }}{{ end }}
-    </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        manrope: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#a8e8ff',
+                        'primary-container': '#00d4ff',
+                        surface: '#121416',
+                        'surface-container-low': '#1a1c1e',
+                        'surface-container-high': '#282a2c',
+                        'outline-variant': '#3c494e',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #121416;
+            color: #e2e2e5;
+            font-family: 'Inter', sans-serif;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(168, 232, 255, 0.4);
+        }
+        .glass-panel {
+            background: rgba(40, 42, 44, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(60, 73, 78, 0.1);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0e10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3c494e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8e8ff;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    {{ partial "header.html" . }}
+    
+    <div class="flex flex-1 pt-16">
+        {{ partial "sidebar.html" . }}
+        
+        <div class="flex-1 lg:ml-72 relative min-h-screen overflow-hidden">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
+    
+    {{ partial "footer.html" . }}
+    
+    <!-- Simple animations script to mimic Framer Motion -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
-
 </html>

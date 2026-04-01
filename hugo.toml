@@ -1,27 +1,43 @@
-baseURL = 'https://XBlankZGap.github.io/seo-portfolio/'
+baseURL = '/'
 languageCode = 'en-us'
-title = "Sophy's SEO Portfolio"
-theme = 'PaperMod'
-defaultTheme = 'dark'
-
-[[menu.main]]
-    name = "About Me"
-    url = "about/"
-    weight = 40
-
-[[menu.main]]
-    name = "Contact"
-    url = "contact/"
-    weight = 60
-
-[markup.goldmark.renderer]
-    unsafe = true
+title = 'Cyanide Analytics'
+relativeURLs = true
+canonifyURLs = false
 
 [params]
-    ShowReadingTime = true
-    ShowBreadCrumbs = true
-    ShowPostNavLinks = true
+  description = 'Technical SEO Intelligence Report'
+  author = 'Sophy Chisom Abraham'
 
-[outputs]
-    home = ["HTML", "RSS", "JSON"]
-
+[menu]
+  [[menu.main]]
+    name = 'Executive Summary'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Methodology'
+    url = '/methodology/'
+    weight = 2
+  [[menu.main]]
+    name = 'Issue Discovery'
+    url = '/issue-discovery/'
+    weight = 3
+  [[menu.main]]
+    name = 'Strategic Roadmap'
+    url = '/roadmap/'
+    weight = 4
+  [[menu.main]]
+    name = 'Results & Metrics'
+    url = '/results/'
+    weight = 5
+  [[menu.main]]
+    name = 'Lessons'
+    url = '/lessons/'
+    weight = 6
+  [[menu.main]]
+    name = 'About Strategist'
+    url = '/about/'
+    weight = 7
+  [[menu.main]]
+    name = 'Contact'
+    url = '/contact/'
+    weight = 8
