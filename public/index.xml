@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SEO Analytics</title>
-    <link>//localhost:41459/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on SEO Analytics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:41459/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Methodology</title>
-      <link>//localhost:41459/case-studies/equinox-saas/methodology/</link>
+      <link>//localhost:1313/case-studies/equinox-saas/methodology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/case-studies/equinox-saas/methodology/</guid>
+      <guid>//localhost:1313/case-studies/equinox-saas/methodology/</guid>
       <description></description>
     </item>
     <item>
       <title>Methodology</title>
-      <link>//localhost:41459/case-studies/nebula-fintech/methodology/</link>
+      <link>//localhost:1313/case-studies/nebula-fintech/methodology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/case-studies/nebula-fintech/methodology/</guid>
+      <guid>//localhost:1313/case-studies/nebula-fintech/methodology/</guid>
       <description></description>
     </item>
     <item>
       <title>Issue Discovery</title>
-      <link>//localhost:41459/case-studies/equinox-saas/issue-discovery/</link>
+      <link>//localhost:1313/case-studies/equinox-saas/issue-discovery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/case-studies/equinox-saas/issue-discovery/</guid>
+      <guid>//localhost:1313/case-studies/equinox-saas/issue-discovery/</guid>
       <description></description>
     </item>
     <item>
       <title>Strategic Roadmap</title>
-      <link>//localhost:41459/case-studies/equinox-saas/roadmap/</link>
+      <link>//localhost:1313/case-studies/equinox-saas/roadmap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/case-studies/equinox-saas/roadmap/</guid>
+      <guid>//localhost:1313/case-studies/equinox-saas/roadmap/</guid>
       <description></description>
     </item>
     <item>
       <title>Results &amp; Metrics</title>
-      <link>//localhost:41459/case-studies/equinox-saas/results/</link>
+      <link>//localhost:1313/case-studies/equinox-saas/results/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/case-studies/equinox-saas/results/</guid>
+      <guid>//localhost:1313/case-studies/equinox-saas/results/</guid>
       <description></description>
     </item>
     <item>
       <title>Lessons</title>
-      <link>//localhost:41459/case-studies/equinox-saas/lessons/</link>
+      <link>//localhost:1313/case-studies/equinox-saas/lessons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/case-studies/equinox-saas/lessons/</guid>
+      <guid>//localhost:1313/case-studies/equinox-saas/lessons/</guid>
       <description></description>
     </item>
     <item>
       <title>About Strategist</title>
-      <link>//localhost:41459/about/</link>
+      <link>//localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/about/</guid>
+      <guid>//localhost:1313/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Contact</title>
-      <link>//localhost:41459/contact/</link>
+      <link>//localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/contact/</guid>
+      <guid>//localhost:1313/contact/</guid>
       <description></description>
     </item>
   </channel>
