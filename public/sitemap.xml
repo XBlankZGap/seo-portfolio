@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:41459/about/</loc>
+    <loc>//localhost:1313/about/</loc>
   </url><url>
-    <loc>//localhost:41459/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
   </url><url>
-    <loc>//localhost:41459/contact/</loc>
+    <loc>//localhost:1313/contact/</loc>
   </url><url>
-    <loc>//localhost:41459/</loc>
+    <loc>//localhost:1313/</loc>
   </url><url>
-    <loc>//localhost:41459/issue-discovery/</loc>
+    <loc>//localhost:1313/issue-discovery/</loc>
   </url><url>
-    <loc>//localhost:41459/lessons/</loc>
+    <loc>//localhost:1313/lessons/</loc>
   </url><url>
-    <loc>//localhost:41459/methodology/</loc>
+    <loc>//localhost:1313/methodology/</loc>
   </url><url>
-    <loc>//localhost:41459/results/</loc>
+    <loc>//localhost:1313/results/</loc>
   </url><url>
-    <loc>//localhost:41459/roadmap/</loc>
+    <loc>//localhost:1313/roadmap/</loc>
   </url><url>
-    <loc>//localhost:41459/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

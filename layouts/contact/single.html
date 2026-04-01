@@ -55,24 +55,24 @@
             <!-- Right Column: Contact Form -->
             <div class="lg:col-span-8">
                 <div class="bg-[#1a1c1e]/40 backdrop-blur-xl rounded-2xl border border-[#3c494e]/10 p-10">
-                    <form class="space-y-8" onsubmit="event.preventDefault(); alert('Message sent! (Simulation)');">
+                    <form action="https://formspree.io/f/mbdpdakd" method="POST" class="space-y-8">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="space-y-2">
                                 <label class="text-[10px] font-bold uppercase tracking-widest text-[#a8e8ff] font-inter">Full Name</label>
-                                <input type="text" placeholder="John Doe" class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light" />
+                                <input type="text" name="name" placeholder="John Doe" class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light" required />
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] font-bold uppercase tracking-widest text-[#a8e8ff] font-inter">Email Address</label>
-                                <input type="email" placeholder="john@company.com" class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light" />
+                                <input type="email" name="email" placeholder="john@company.com" class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light" required />
                             </div>
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-bold uppercase tracking-widest text-[#a8e8ff] font-inter">Subject</label>
-                            <input type="text" placeholder="Technical Audit Inquiry" class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light" />
+                            <input type="text" name="subject" placeholder="Technical Audit Inquiry" class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light" required />
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-bold uppercase tracking-widest text-[#a8e8ff] font-inter">Message</label>
-                            <textarea rows="6" placeholder="Tell me about your domain bottlenecks..." class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light resize-none"></textarea>
+                            <textarea rows="6" name="message" placeholder="Tell me about your domain bottlenecks..." class="w-full bg-[#282a2c] border border-[#3c494e]/20 rounded-lg px-4 py-3 text-[#e2e2e5] focus:outline-none focus:border-[#a8e8ff] transition-colors font-light resize-none" required></textarea>
                         </div>
                         <button type="submit" class="w-full bg-[#00d4ff] text-[#003642] font-manrope font-black py-4 rounded-xl shadow-[0_0_24px_rgba(0,212,255,0.3)] hover:scale-[1.02] transition-transform uppercase tracking-widest text-sm">
                             Send Strategic Inquiry
