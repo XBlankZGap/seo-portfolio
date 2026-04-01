@@ -1,6 +1,6 @@
-# Cyanide Analytics - Hugo Static Site
+# SEO Analytics - Hugo Static Site
 
-This is a static site version of the Cyanide Analytics dashboard, built with the Hugo framework and styled with Tailwind CSS.
+This is a static site version of the SEO Analytics dashboard, built with the Hugo framework and styled with Tailwind CSS.
 
 ## Prerequisites
 

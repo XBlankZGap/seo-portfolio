@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = 'en-us'
-title = 'Cyanide Analytics'
+title = 'SEO Analytics'
 relativeURLs = true
 canonifyURLs = false
 
