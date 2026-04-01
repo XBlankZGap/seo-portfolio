@@ -2,24 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>//localhost:41459/case-studies/equinox-saas/methodology/</loc>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>//localhost:41459/case-studies/nebula-fintech/methodology/</loc>
   </url><url>
-    <loc>//localhost:1313/contact/</loc>
+    <loc>//localhost:41459/case-studies/equinox-saas/issue-discovery/</loc>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>//localhost:41459/case-studies/equinox-saas/roadmap/</loc>
   </url><url>
-    <loc>//localhost:1313/issue-discovery/</loc>
+    <loc>//localhost:41459/case-studies/equinox-saas/results/</loc>
   </url><url>
-    <loc>//localhost:1313/lessons/</loc>
+    <loc>//localhost:41459/case-studies/equinox-saas/lessons/</loc>
   </url><url>
-    <loc>//localhost:1313/methodology/</loc>
+    <loc>//localhost:41459/case-studies/</loc>
+    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/results/</loc>
+    <loc>//localhost:41459/</loc>
+    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/roadmap/</loc>
+    <loc>//localhost:41459/case-studies/nebula-fintech/</loc>
+    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>//localhost:41459/case-studies/equinox-saas/</loc>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:41459/about/</loc>
+  </url><url>
+    <loc>//localhost:41459/categories/</loc>
+  </url><url>
+    <loc>//localhost:41459/contact/</loc>
+  </url><url>
+    <loc>//localhost:41459/tags/</loc>
   </url>
 </urlset>

@@ -5,39 +5,19 @@ relativeURLs = true
 canonifyURLs = false
 
 [params]
-  description = 'Technical SEO Intelligence Report'
+  description = 'Technical SEO Intelligence Portfolio'
   author = 'Sophy Chisom Abraham'
 
 [menu]
   [[menu.main]]
-    name = 'Executive Summary'
+    name = 'Portfolio'
     url = '/'
     weight = 1
   [[menu.main]]
-    name = 'Methodology'
-    url = '/methodology/'
-    weight = 2
-  [[menu.main]]
-    name = 'Issue Discovery'
-    url = '/issue-discovery/'
-    weight = 3
-  [[menu.main]]
-    name = 'Strategic Roadmap'
-    url = '/roadmap/'
-    weight = 4
-  [[menu.main]]
-    name = 'Results & Metrics'
-    url = '/results/'
-    weight = 5
-  [[menu.main]]
-    name = 'Lessons'
-    url = '/lessons/'
-    weight = 6
-  [[menu.main]]
     name = 'About Strategist'
     url = '/about/'
-    weight = 7
+    weight = 5
   [[menu.main]]
     name = 'Contact'
     url = '/contact/'
-    weight = 8
+    weight = 10

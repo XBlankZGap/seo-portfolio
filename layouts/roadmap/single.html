@@ -13,17 +13,18 @@
                 <div class="h-px w-24 bg-[#3c494e]/30"></div>
             </div>
             <h1 class="text-5xl font-manrope font-extrabold tracking-tight text-[#e2e2e5] mb-6 leading-tight">
-                Section 4: The Strategic Roadmap <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#a8e8ff] to-[#00d4ff]">— Trade-offs & Priorities</span>
+                {{ .Weight }}. {{ .Title }} <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#a8e8ff] to-[#00d4ff]">{{ .Params.subtitle }}</span>
             </h1>
             <p class="text-[#bbc9cf] text-lg max-w-2xl font-light leading-relaxed">
-                A three-phase approach designed to stabilize immediate revenue leakage, re-architect the delivery framework for performance, and secure visibility in the emerging generative search landscape.
+                {{ .Params.description }}
             </p>
         </header>
 
         <!-- Roadmap Content: Bento Grid Layout -->
         <div class="grid grid-cols-12 gap-6">
-            <!-- Phase 1: Revenue Recovery -->
+            <!-- Phase 1 -->
+            {{ with .Params.phase1 }}
             <div class="col-span-12 lg:col-span-8 bg-[#1a1c1e] rounded-xl p-8 border border-[#3c494e]/10 relative overflow-hidden group">
                 <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
                     <svg class="w-32 h-32" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.9-9.9c1-1 2.5-1 3.4 0l4.3 4.3c1 1 1 2.5 0 3.4l-9.9 9.9c-1 1-2.5 1-3.4 0z"/><path d="M14 7l3 3"/><path d="m5 11 1 1"/><path d="m8 14 1 1"/><path d="m11 17 1 1"/></svg>
@@ -33,8 +34,8 @@
                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-manrope font-bold text-xl text-[#e2e2e5]">Phase 1: Revenue Recovery</h3>
-                        <p class="text-[#bbc9cf] text-sm font-inter">Immediate Action Window (Days 1-30)</p>
+                        <h3 class="font-manrope font-bold text-xl text-[#e2e2e5]">{{ .title }}</h3>
+                        <p class="text-[#bbc9cf] text-sm font-inter">{{ .period }}</p>
                     </div>
                 </div>
 
@@ -47,10 +48,10 @@
                             <svg class="w-4 h-4 text-[#a8e8ff]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
                             <span class="text-[10px] font-bold text-[#a8e8ff] tracking-widest uppercase font-inter">Input Fix</span>
                         </div>
-                        <p class="text-[#e2e2e5] font-semibold text-sm">Resolved 301 redirect loops</p>
+                        <p class="text-[#e2e2e5] font-semibold text-sm">{{ .fix_label }}</p>
                         <div class="mt-4 flex items-center gap-2">
                             <div class="w-2 h-2 rounded-full bg-[#a8e8ff] animate-pulse"></div>
-                            <span class="text-[10px] text-[#bbc9cf] italic font-inter">Latency Reduced by 400ms</span>
+                            <span class="text-[10px] text-[#bbc9cf] italic font-inter">{{ .fix_metric }}</span>
                         </div>
                     </div>
 
@@ -63,8 +64,8 @@
                             <svg class="w-4 h-4 text-[#a8e8ff]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
                             <span class="text-[10px] font-bold text-[#a8e8ff] tracking-widest uppercase font-inter">Output Metric</span>
                         </div>
-                        <p class="text-[#e2e2e5] font-semibold text-sm">MQL Pipeline Stabilization</p>
-                        <div class="mt-4 text-[#a8e8ff] text-lg font-black tracking-tighter font-manrope">+12% WoW</div>
+                        <p class="text-[#e2e2e5] font-semibold text-sm">{{ .output_label }}</p>
+                        <div class="mt-4 text-[#a8e8ff] text-lg font-black tracking-tighter font-manrope">{{ .output_metric }}</div>
                     </div>
                 </div>
 
@@ -75,7 +76,7 @@
                             <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/></svg> Trade-off
                         </h4>
                         <p class="text-[#bbc9cf] text-xs leading-relaxed italic font-light">
-                            &quot;Delayed &apos;Core Web Vitals&apos; overhaul to prioritize fixing crawler trap indexing. We chose indexation stability over millisecond speeds in the short term.&quot;
+                            "{{ .trade_off }}"
                         </p>
                     </div>
                     <div class="p-5 rounded-lg border border-[#3c494e]/20 bg-[#333537]">
@@ -83,13 +84,14 @@
                             <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5Z"/><path d="M8.5 8.5V11"/><path d="M15.5 15.5V13"/></svg> Reasoning
                         </h4>
                         <p class="text-[#bbc9cf] text-xs leading-relaxed font-light">
-                            Fixing loops prevents crawl budget waste immediately, which was the primary driver of the 22% drop in high-intent keyword visibility.
+                            {{ .reasoning }}
                         </p>
                     </div>
                 </div>
             </div>
+            {{ end }}
 
-            <!-- Stats/Pulse -->
+            <!-- Stats -->
             <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
                 <div class="flex-1 bg-[#00d4ff] rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group">
                     <div class="absolute -bottom-4 -right-4 opacity-10 pointer-events-none">
@@ -105,7 +107,7 @@
                     <div class="z-10">
                         <p class="text-[#003642] text-sm font-medium mb-1">Crawl Budget Efficiency</p>
                         <div class="flex items-end gap-3">
-                            <span class="text-[#003642] text-5xl font-extrabold tracking-tighter font-manrope">98.4%</span>
+                            <span class="text-[#003642] text-5xl font-extrabold tracking-tighter font-manrope">{{ .Params.stats.efficiency }}</span>
                             <svg class="text-[#003642] w-6 h-6 mb-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                         </div>
                     </div>
@@ -114,24 +116,25 @@
                 <div class="h-32 bg-[#282a2c] rounded-xl p-6 flex items-center gap-6 border border-[#3c494e]/10">
                     <div class="flex flex-col">
                         <span class="text-[#bbc9cf] text-[10px] font-bold uppercase tracking-widest font-inter">Team Velocity</span>
-                        <span class="text-[#a8e8ff] text-3xl font-black font-manrope">2.4x</span>
+                        <span class="text-[#a8e8ff] text-3xl font-black font-manrope">{{ .Params.stats.velocity }}</span>
                     </div>
                     <div class="h-12 w-px bg-[#3c494e]/20"></div>
                     <p class="text-[#bbc9cf] text-[11px] leading-tight font-light">
-                        Engineering-SEO conflict resolution accelerated sprint delivery cycles by 140%.
+                        {{ .Params.stats.velocity_desc }}
                     </p>
                 </div>
             </div>
 
-            <!-- Phase 2: Structural Overhaul -->
+            <!-- Phase 2 -->
+            {{ with .Params.phase2 }}
             <div class="col-span-12 bg-[#1a1c1e] rounded-xl p-8 border border-[#3c494e]/10">
                 <div class="flex items-center gap-4 mb-10">
                     <div class="w-10 h-10 rounded-lg bg-[#a8e8ff]/20 flex items-center justify-center text-[#a8e8ff] border border-[#a8e8ff]/30">
                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-manrope font-bold text-xl text-[#e2e2e5]">Phase 2: Structural Overhaul</h3>
-                        <p class="text-[#bbc9cf] text-sm font-inter">Efficiency Migration (Days 31-90)</p>
+                        <h3 class="font-manrope font-bold text-xl text-[#e2e2e5]">{{ .title }}</h3>
+                        <p class="text-[#bbc9cf] text-sm font-inter">{{ .period }}</p>
                     </div>
                 </div>
 
@@ -171,40 +174,52 @@
                     <div class="bg-[#282a2c] rounded-xl p-6 border-l-4 border-[#a8e8ff]">
                         <div class="flex items-center gap-3 mb-4">
                             <svg class="text-[#a8e8ff] w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                            <h4 class="text-sm font-bold text-[#e2e2e5] tracking-tight font-manrope">The Engineering Conflict</h4>
+                            <h4 class="text-sm font-bold text-[#e2e2e5] tracking-tight font-manrope">{{ .conflict_title }}</h4>
                         </div>
                         <p class="text-[#bbc9cf] text-sm leading-relaxed mb-4 font-light">
-                            Conflict arose regarding &quot;Bundle Size&quot; vs. &quot;Feature Set.&quot; Engineers favored bloated libraries for rapid feature dev; SEO mandated a strict 150KB threshold for critical path JS.
+                            {{ .conflict_desc }}
                         </p>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <span class="block text-[10px] text-[#bbc9cf] uppercase font-bold mb-1 font-inter">Crawl Efficiency</span>
-                                <span class="text-[#a8e8ff] font-black text-xl font-manrope">+340%</span>
+                                <span class="text-[#a8e8ff] font-black text-xl font-manrope">{{ .metric1 }}</span>
                             </div>
                             <div>
                                 <span class="block text-[10px] text-[#bbc9cf] uppercase font-bold mb-1 font-inter">CWV Pass Rate</span>
-                                <span class="text-[#a8e8ff] font-black text-xl font-manrope">100%</span>
+                                <span class="text-[#a8e8ff] font-black text-xl font-manrope">{{ .metric2 }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {{ end }}
         </div>
 
         <!-- Footer Visual -->
         <footer class="mt-20 flex justify-between items-center border-t border-[#3c494e]/10 pt-8">
-            <a href="/issue-discovery/" class="flex items-center gap-4 group">
+            {{ with .PrevInSection }}
+            <a href="{{ .Permalink }}" class="flex items-center gap-4 group">
                 <div class="w-10 h-10 rounded-full bg-[#282a2c] flex items-center justify-center group-hover:bg-[#333537] transition-colors">
-                    <svg class="text-[#bbc9cf] w-5 h-5 rotate-[-90deg]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></polyline><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    <svg class="text-[#bbc9cf] w-5 h-5 rotate-[-90deg]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
                 </div>
-                <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Section 3: Issue Discovery</span>
+                <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Prev: {{ .Title }}</span>
             </a>
+            {{ else }}
+            <a href="{{ .Parent.Permalink }}" class="flex items-center gap-4 group">
+                <div class="w-10 h-10 rounded-full bg-[#282a2c] flex items-center justify-center group-hover:bg-[#333537] transition-colors">
+                    <svg class="text-[#bbc9cf] w-5 h-5 rotate-[-180deg]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </div>
+                <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Back to Overview</span>
+            </a>
+            {{ end }}
 
             <div class="flex items-center gap-6">
-                <span class="text-[10px] uppercase tracking-widest text-[#00d4ff] font-bold font-inter">Next Up: Results & Metrics</span>
-                <a href="/results/" class="w-12 h-12 rounded-full bg-[#00d4ff] flex items-center justify-center text-[#003642] shadow-[0_0_24px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform">
+                {{ with .NextInSection }}
+                <span class="text-[10px] uppercase tracking-widest text-[#00d4ff] font-bold font-inter">Next up: {{ .Title }}</span>
+                <a href="{{ .Permalink }}" class="w-12 h-12 rounded-full bg-[#00d4ff] flex items-center justify-center text-[#003642] shadow-[0_0_24px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
+                {{ end }}
             </div>
         </footer>
     </div>

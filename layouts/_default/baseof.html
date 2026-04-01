@@ -68,9 +68,11 @@
     {{ partial "header.html" . }}
     
     <div class="flex flex-1 pt-16">
+        {{ if eq .Section "case-studies" }}
         {{ partial "sidebar.html" . }}
+        {{ end }}
         
-        <div class="flex-1 lg:ml-72 relative min-h-screen overflow-hidden">
+        <div class="flex-1 {{ if eq .Section "case-studies" }}lg:ml-72{{ end }} relative min-h-screen overflow-hidden">
             {{ block "main" . }}{{ end }}
         </div>
     </div>

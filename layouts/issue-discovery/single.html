@@ -10,10 +10,10 @@
         <header class="max-w-6xl mb-24 relative">
             <div class="absolute -left-12 top-0 w-1 h-16 bg-[#00d4ff]"></div>
             <h1 class="text-5xl lg:text-7xl font-manrope font-extrabold tracking-tight text-[#e2e2e5] mb-6">
-                Section 3: <span class="text-[#00d4ff]">High-Fidelity</span> Issue Discovery
+                {{ .Weight }}. <span class="text-[#00d4ff]">{{ .Params.subtitle }}</span> {{ .Title }}
             </h1>
             <p class="text-xl text-[#bbc9cf] max-w-2xl leading-relaxed font-light">
-                Comprehensive data and visualizations for Onsite, Onpage, and Competitive gaps found during the audit. We transition from observations to algorithmic evidence.
+                {{ .Params.description }}
             </p>
         </header>
 
@@ -21,8 +21,8 @@
             <!-- Subsection 1: Onsite Indexing Noise -->
             <section class="lg:col-span-12 space-y-8">
                 <div class="flex items-center gap-4">
-                    <span class="text-[#00d4ff] font-manrope font-bold text-lg">03.1</span>
-                    <h2 class="text-3xl font-manrope font-bold text-[#e2e2e5]">Onsite: The Indexing &apos;Noise&apos;</h2>
+                    <span class="text-[#00d4ff] font-manrope font-bold text-lg">0{{ .Weight }}.1</span>
+                    <h2 class="text-3xl font-manrope font-bold text-[#e2e2e5]">Onsite: The Indexing 'Noise'</h2>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -48,7 +48,7 @@
                                 <circle cx="128" cy="128" fill="transparent" r="100" stroke="#282a2c" stroke-dasharray="12.56 628" stroke-dashoffset="-615.44" stroke-width="40"></circle>
                             </svg>
                             <div class="absolute inset-0 flex flex-col items-center justify-center">
-                                <span class="text-3xl font-manrope font-extrabold text-[#e2e2e5]">4,000+</span>
+                                <span class="text-3xl font-manrope font-extrabold text-[#e2e2e5]">{{ .Params.onsite.total_urls }}</span>
                                 <span class="text-[10px] uppercase tracking-tighter text-[#bbc9cf] font-inter">Analyzed URLs</span>
                             </div>
                         </div>
@@ -56,19 +56,19 @@
                         <div class="grid grid-cols-2 gap-4 mt-8">
                             <div class="flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-[#00d4ff]"></div>
-                                <span class="text-[11px] text-[#bbc9cf] font-inter">Strategic Pages <span class="text-[#e2e2e5] font-bold">56%</span></span>
+                                <span class="text-[11px] text-[#bbc9cf] font-inter">Strategic Pages <span class="text-[#e2e2e5] font-bold">{{ .Params.onsite.strategic }}%</span></span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-[#3cd7ff]"></div>
-                                <span class="text-[11px] text-[#bbc9cf] font-inter">Duplicate URLs <span class="text-[#e2e2e5] font-bold">26%</span></span>
+                                <span class="text-[11px] text-[#bbc9cf] font-inter">Duplicate URLs <span class="text-[#e2e2e5] font-bold">{{ .Params.onsite.duplicate }}%</span></span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-[#859398]"></div>
-                                <span class="text-[11px] text-[#bbc9cf] font-inter">404s & Redirects <span class="text-[#e2e2e5] font-bold">16%</span></span>
+                                <span class="text-[11px] text-[#bbc9cf] font-inter">404s & Redirects <span class="text-[#e2e2e5] font-bold">{{ .Params.onsite.errors }}%</span></span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-[#282a2c]"></div>
-                                <span class="text-[11px] text-[#bbc9cf] font-inter">Other <span class="text-[#e2e2e5] font-bold">2%</span></span>
+                                <span class="text-[11px] text-[#bbc9cf] font-inter">Other <span class="text-[#e2e2e5] font-bold">{{ .Params.onsite.other }}%</span></span>
                             </div>
                         </div>
                     </div>
@@ -76,10 +76,10 @@
                     <!-- Data Point Analysis -->
                     <div class="flex flex-col gap-6">
                         <div class="bg-[#1a1c1e] p-8 rounded-xl flex-1 flex flex-col justify-center border border-[#3c494e]/10">
-                            <span class="text-[#00d4ff] font-manrope text-5xl font-black mb-2">15%</span>
+                            <span class="text-[#00d4ff] font-manrope text-5xl font-black mb-2">{{ .Params.onsite.duplication_rate }}</span>
                             <h4 class="text-[#e2e2e5] font-bold text-xl mb-4 uppercase tracking-tighter font-manrope">Duplication Rate</h4>
                             <p class="text-[#bbc9cf] leading-relaxed text-sm font-light">
-                                Analysis reveals consistent crawl waste across <span class="text-[#e2e2e5] font-medium">4,000+ URLs</span>. Primary drivers: Inconsistent trailing slash enforcement and un-canonicalized session ID handling in dynamic facets.
+                                {{ .Params.onsite.duplication_desc | safeHTML }}
                             </p>
                         </div>
                         
@@ -89,7 +89,7 @@
                                 <span class="font-manrope font-bold uppercase tracking-widest text-[10px]">Critical Alert</span>
                             </div>
                             <p class="text-lg font-medium leading-snug">
-                                Duplicate parameters are diluting internal link equity by 32% across high-intent category nodes.
+                                {{ .Params.onsite.alert }}
                             </p>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
             <!-- Subsection 2: Rendering & Architecture -->
             <section class="lg:col-span-8 space-y-8">
                 <div class="flex items-center gap-4">
-                    <span class="text-[#00d4ff] font-manrope font-bold text-lg">03.2</span>
+                    <span class="text-[#00d4ff] font-manrope font-bold text-lg">0{{ .Weight }}.2</span>
                     <h2 class="text-3xl font-manrope font-bold text-[#e2e2e5]">Onpage: Rendering & Architecture</h2>
                 </div>
                 
@@ -131,7 +131,7 @@
                         </div>
                         
                         <div class="absolute top-1/2 left-[50%] -translate-x-1/2 flex flex-col items-center">
-                            <div class="bg-[#333537] px-3 py-1 rounded text-[#00d4ff] font-black text-sm border border-[#00d4ff]/20">3-5 DAYS GAP</div>
+                            <div class="bg-[#333537] px-3 py-1 rounded text-[#00d4ff] font-black text-sm border border-[#00d4ff]/20 uppercase">{{ .Params.onpage.latency_label }}</div>
                             <div class="w-0.5 h-4 bg-[#00d4ff]/40"></div>
                         </div>
                     </div>
@@ -145,20 +145,14 @@
                         <h3 class="font-manrope font-bold text-[#e2e2e5] text-lg">Crawl Depth Map</h3>
                     </div>
                     <div class="space-y-6">
-                        <div class="flex justify-between items-end border-b border-[#3c494e]/10 pb-4">
-                            <span class="text-[#bbc9cf] text-sm">Depth 1-2</span>
-                            <span class="text-[#e2e2e5] font-bold">15%</span>
+                        {{ range .Params.onpage.depth_map }}
+                        <div class="flex justify-between items-end {{ if not .highlight }}border-b border-[#3c494e]/10{{ end }} pb-4 {{ if .highlight }}bg-[#00d4ff]/5 -mx-2 px-2 rounded{{ end }}">
+                            <span class="{{ if .highlight }}text-[#00d4ff] font-bold{{ else }}text-[#bbc9cf]{{ end }} text-sm">{{ .label }}</span>
+                            <span class="{{ if .highlight }}text-[#00d4ff] font-black text-xl{{ else }}text-[#e2e2e5] font-bold{{ end }}">{{ .value }}</span>
                         </div>
-                        <div class="flex justify-between items-end border-b border-[#3c494e]/10 pb-4">
-                            <span class="text-[#bbc9cf] text-sm">Depth 3-4</span>
-                            <span class="text-[#e2e2e5] font-bold">45%</span>
-                        </div>
-                        <div class="flex justify-between items-end pb-4 bg-[#00d4ff]/5 -mx-2 px-2 rounded">
-                            <span class="text-[#00d4ff] text-sm font-bold">Depth 5+</span>
-                            <span class="text-[#00d4ff] font-black text-xl">40%</span>
-                        </div>
+                        {{ end }}
                         <p class="text-xs text-[#bbc9cf] italic leading-relaxed pt-4 font-light">
-                            Internal equity dilution identified. 40% of strategic content is buried too deep for consistent re-crawling.
+                            {{ .Params.onpage.depth_desc }}
                         </p>
                     </div>
                 </div>
@@ -167,7 +161,7 @@
             <!-- Subsection 3: Competitive Gap Analysis -->
             <section class="lg:col-span-12 mt-12 space-y-12">
                 <div class="flex items-center gap-4">
-                    <span class="text-[#00d4ff] font-manrope font-bold text-lg">03.3</span>
+                    <span class="text-[#00d4ff] font-manrope font-bold text-lg">0{{ .Weight }}.3</span>
                     <h2 class="text-3xl font-manrope font-bold text-[#e2e2e5]">Competitive Gap Analysis</h2>
                 </div>
                 
@@ -195,41 +189,52 @@
                         <div class="bg-[#282a2c] p-6 rounded-xl border-t-2 border-[#00d4ff]">
                             <svg class="text-[#00d4ff] w-5 h-5 mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
                             <h4 class="text-[10px] uppercase tracking-widest text-[#bbc9cf] mb-2 font-bold font-inter">Share of Voice</h4>
-                            <div class="text-2xl font-manrope font-black text-[#e2e2e5]">25% Gap</div>
-                            <p class="text-[11px] mt-4 text-[#bbc9cf] font-light">Competitor A dominates long-tail commercial intent.</p>
+                            <div class="text-2xl font-manrope font-black text-[#e2e2e5]">{{ .Params.competitive.sov_gap }}</div>
+                            <p class="text-[11px] mt-4 text-[#bbc9cf] font-light">{{ .Params.competitive.sov_desc }}</p>
                         </div>
                         
                         <div class="bg-[#282a2c] p-6 rounded-xl border-t-2 border-[#859398]">
                             <svg class="text-[#859398] w-5 h-5 mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
                             <h4 class="text-[10px] uppercase tracking-widest text-[#bbc9cf] mb-2 font-bold font-inter">Architecture</h4>
-                            <div class="text-2xl font-manrope font-black text-[#e2e2e5]">Flat (Max 3)</div>
-                            <p class="text-[11px] mt-4 text-[#bbc9cf] font-light">Optimal link flow facilitates rapid sub-page indexing.</p>
+                            <div class="text-2xl font-manrope font-black text-[#e2e2e5]">{{ .Params.competitive.arch }}</div>
+                            <p class="text-[11px] mt-4 text-[#bbc9cf] font-light">{{ .Params.competitive.arch_desc }}</p>
                         </div>
                         
                         <div class="bg-[#282a2c] p-6 rounded-xl border-t-2 border-[#3cd7ff]">
                             <svg class="text-[#3cd7ff] w-5 h-5 mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                             <h4 class="text-[10px] uppercase tracking-widest text-[#bbc9cf] mb-2 font-bold font-inter">TTFB Response</h4>
-                            <div class="text-2xl font-manrope font-black text-[#e2e2e5]">&lt;200ms</div>
-                            <p class="text-[11px] mt-4 text-[#bbc9cf] font-light">Superior edge caching infrastructure vs our 850ms.</p>
+                            <div class="text-2xl font-manrope font-black text-[#e2e2e5]">{{ .Params.competitive.ttfb }}</div>
+                            <p class="text-[11px] mt-4 text-[#bbc9cf] font-light">{{ .Params.competitive.ttfb_desc }}</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Action Footer -->
+            <!-- Footer Navigation -->
             <footer class="lg:col-span-12 pt-24 pb-12 flex justify-between items-center border-t border-[#3c494e]/10">
-                <a href="/methodology/" class="flex items-center gap-4 group">
+                {{ with .PrevInSection }}
+                <a href="{{ .Permalink }}" class="flex items-center gap-4 group">
                     <div class="w-10 h-10 rounded-full bg-[#282a2c] flex items-center justify-center group-hover:bg-[#333537] transition-colors">
                         <svg class="text-[#bbc9cf] w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                     </div>
-                    <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Section 2: Methodology</span>
+                    <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Prev: {{ .Title }}</span>
                 </a>
+                {{ else }}
+                <a href="{{ .Parent.Permalink }}" class="flex items-center gap-4 group">
+                    <div class="w-10 h-10 rounded-full bg-[#282a2c] flex items-center justify-center group-hover:bg-[#333537] transition-colors">
+                        <svg class="text-[#bbc9cf] w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest text-[#bbc9cf] font-bold font-inter">Back to Overview</span>
+                </a>
+                {{ end }}
                 
                 <div class="flex items-center gap-6">
-                    <span class="text-[10px] uppercase tracking-widest text-[#00d4ff] font-bold font-inter">Next Up: Strategic Roadmap</span>
-                    <a href="/roadmap/" class="w-12 h-12 rounded-full bg-[#00d4ff] flex items-center justify-center text-[#003642] shadow-[0_0_24px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform">
+                    {{ with .NextInSection }}
+                    <span class="text-[10px] uppercase tracking-widest text-[#00d4ff] font-bold font-inter">Next Up: {{ .Title }}</span>
+                    <a href="{{ .Permalink }}" class="w-12 h-12 rounded-full bg-[#00d4ff] flex items-center justify-center text-[#003642] shadow-[0_0_24px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
+                    {{ end }}
                 </div>
             </footer>
         </div>

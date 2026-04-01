@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cyanide Analytics</title>
-    <link>//localhost:41459/</link>
-    <description>Recent content on Cyanide Analytics</description>
+    <title>Project Equinox on Cyanide Analytics</title>
+    <link>//localhost:41459/case-studies/equinox-saas/</link>
+    <description>Recent content in Project Equinox on Cyanide Analytics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:41459/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:41459/case-studies/equinox-saas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Methodology</title>
       <link>//localhost:41459/case-studies/equinox-saas/methodology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:41459/case-studies/equinox-saas/methodology/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Methodology</title>
-      <link>//localhost:41459/case-studies/nebula-fintech/methodology/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/case-studies/nebula-fintech/methodology/</guid>
       <description></description>
     </item>
     <item>
@@ -48,20 +41,6 @@
       <link>//localhost:41459/case-studies/equinox-saas/lessons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:41459/case-studies/equinox-saas/lessons/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>About Strategist</title>
-      <link>//localhost:41459/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/about/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Contact</title>
-      <link>//localhost:41459/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:41459/contact/</guid>
       <description></description>
     </item>
   </channel>
